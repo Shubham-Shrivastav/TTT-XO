@@ -1,0 +1,15 @@
+.reset-btn {
+    border: none;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, rgb(231, 52, 61), rgb(69, 145, 207));
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 2rem auto;
+    display: block;
+    font-weight: bolder;
+}
+
+.reset-btn:hover {
+    background: linear-gradient(to right, rgb(62, 129, 184), rgb(212, 51, 59));
+    transition: smoothing .5s ease-in-out;
+}

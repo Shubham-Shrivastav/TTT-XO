@@ -7,4 +7,3 @@ export const Box = ({ value, onClick }) => {
         <button className={style} onClick={onClick}>{value}</button>
     )
 }
-
