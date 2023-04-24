@@ -25,7 +25,7 @@ function App() {
   const handleBoxClick = (boxIdx) => {
     const updateBoard = board.map((value, idx) => {
       if (idx === boxIdx) {
-        return xPlaying === true ? "x" : "O";
+        return xPlaying === true ? "x" : "o";
       } else {
         return value;
       }
@@ -33,17 +33,26 @@ function App() {
 
     const winner = checkWinner(updateBoard);
 
+    // if (winner) {
+    //   if (winner === "o") {
+    //     let { oScore } = setScores;
+    //     oScore += 1
+    //     setScores = { ...scores, oScore }
+    //   } else {
+    //     let { xScore } = setScores;
+    //     xScore += 1;
+    //     setScores = { ...scores, xScore }
+    //   }
+    // }
+
     if (winner) {
-      if (winner === "O") {
-        let { oScore } = setScores;
-        oScore += 1
-        setScores = { ...scores, oScore }
+      if (winner === "o") {
+        setScores(prevState => ({ ...prevState, oScore: prevState.oScore + 1 }));
       } else {
-        let { xScore } = setScores;
-        xScore += 1;
-        setScores = { ...scores, xScore }
+        setScores(prevState => ({ ...prevState, xScore: prevState.xScore + 1 }));
       }
     }
+
 
     setBoard(updateBoard);
 
